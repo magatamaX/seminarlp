@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+.fw {
+
+    .p-point {
+        @include pb(150px, vw(180));
+
+        .titleBox {
+            background-color: $color_main;
+            background-image: url('./../images/point/bg.jpg');
+            background-repeat: repeat-x;
+            background-size: auto;
+            background-position: center top;
+            @include pt(300px, 30vw);
+            @include pb(60px, vw(60));
+            @include mb(80px, vw(80));
+            text-align: center;
+            @include triangle($color:$color_main, $width:80px, $height:40px, $direction:bottom);
+
+            @include max(s) {
+                @include triangle($color:$color_main, $width:vw(80), $height:vw(40), $direction:bottom);
+                background-size: auto 30vw;
+            }
+
+            &__lead {
+                @include pt(40px, vw(50));
+                @include mb(20px, vw(20));
+                display: block;
+                color: #fff;
+                @include fontSize(28px, vw(28));
+            }
+
+            &__title {
+                display: block;
+                color: $color_sub;
+                @include fontSize(40px, vw(40));
+                font-weight: bold;
+
+                @include max(s) {
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        .point {
+            @include mt(60px, vw(40));
+
+            &__item {
+
+                + .point__item {
+                    @include mt(70px, vw(80));
+                }
+
+            }
+
+            &__image {
+                position: relative;
+            }
+
+            &__image-icon {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                @include max(s) {
+                    width: vw(80);
+                }
+            }
+
+            &__content {
+
+            }
+
+            &__titleBox {
+                @include mb(20px, vw(30));
+                @include mt(0, vw(40));
+            }
+
+            &__subtitle {
+                display: inline-block;
+                position: relative;
+                @include fontSize(24px, vw(35));
+                @include mb(30px, vw(55));
+                color: $color_main;
+                font-weight: bold;
+                line-height: 1.2;
+
+                @include max(s) {
+                    display: block;
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 3px;
+                    background-color: $color_main;
+                    position: absolute;
+                    @include top(130%, auto);
+                    @include bottom(auto, -4vw);
+                    left: 0;
+                }
+            }
+
+            &__header {
+                @include fontSize(30px, vw(40));
+                text-align: center;
+                color: $color_main;
+                font-weight: bold;
+
+                @include max(s) {
+                    line-height: 1.2;
+                }
+
+                &--number {
+                    @include fontSize(50px, vw(66));
+                }
+            }
+
+            &__title {
+                @include fontSize(30px, vw(45));
+                color: $color_main;
+                font-weight: bold;
+                line-height: 1.3;
+            }
+
+            &__text {
+                @include fontSize(16px, vw(25));
+            }
+        }
+
+    }
+
+}//.fw

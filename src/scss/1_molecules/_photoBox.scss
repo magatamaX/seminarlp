@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+.fw {
+
+    .m-photoBox {
+        @include mt(30px, vw(30));
+
+        .photo {
+            @include mb(20px, vw(20));
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .title {
+            @include mb(20px, vw(20));
+            background-color: $color_main;
+            color: #fff;
+            line-height: 33px;
+            border-radius: 50px;
+            text-align: center;
+            @include fontSize(18px, vw(18));
+
+            @include max(s) {
+                line-height: vw(33);
+            }
+        }
+
+        .text {
+            @include fontSize(28px, vw(28));
+            line-height: 1.2;
+
+            &--s {
+                @include fontSize(20px, vw(20));
+                display: block;
+            }
+        }
+
+    }
+
+
+}//.fw

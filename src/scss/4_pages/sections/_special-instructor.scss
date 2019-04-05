@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+.fw {
+
+    #contents > .p-special-instructor {
+        @include pd(135px 0 100px, 0);
+        @include mg(0, 0 vw(-30));
+        background-color: #F0F4F7;
+    }
+
+    .p-special-instructor {
+
+        @include max(s) {
+            margin: 0 vw(-30*2);
+        }
+
+        .box {
+            background-color: #FFFCED;
+            @include pd(30px, vw(70) vw(20));
+            box-shadow: 5px 5px 0 rgba(112,112,112,.2);
+            position: relative;
+
+            @include max(s) {
+                box-shadow: none;
+            }
+
+            &__title {
+                position: absolute;
+                @include top(-20px, vw(40));
+                @include left(20px, vw(35));
+
+                @include width(114px, vw(175));
+                @include height(94px, vw(167));
+
+                overflow: hidden;
+
+                span {
+                    background-image: url('./../images/common/voice.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+        
+                    @include width(100%);
+                    @include height(167%);
+        
+                    position: absolute;
+                    @include bottom(0);
+                    @include left(0);
+        
+                    z-index: 10;
+        
+                    @include pt(30px);
+
+                    @include fontSize(20px, vw(34));
+        
+                    color: #fff;
+                    text-align: center;
+        
+                    line-height: 1.1;
+
+                    @include flexBase( $wrap: "nowrap", $direction: "column", $justify: "center", $align: "center" );
+                }
+            }
+
+            &__instructor {
+                @include flexBase( $wrap: "wrap", $direction: "row", $justify: "flex-start", $align: "stretch" );
+                @include mb(30px, vw(70));
+
+                .photo {
+                    flex: 0 0 320px;
+
+                    @include max(s) {
+                        flex: 0 0 100%;
+                    }
+                }
+
+                .instructor {
+                    flex: 1;
+                    @include pl(45px, 0);
+
+                    &__name {
+                        @include fontSize(26px, vw(30));
+                        font-weight: bold;
+                        @include mb(10px, vw(30));
+
+                        @include max(s) {
+                            color: #4D4D4D;
+                            text-align: center;
+                            padding: vw(40) 0 vw(30);
+                            border-bottom: 1px solid $color_main;
+                        }
+                    }
+
+                    &__position {
+                        @include fontSize(15px, vw(26));
+                        @include mb(20px);
+
+                        @include max(s) {
+                            color: #707070;
+                            padding-bottom: vw(30);
+                            text-align: centner;
+                            border-bottom: 1px solid $color_main;
+                        }
+
+                        .list {
+                            &__item {
+                                &::before {
+                                    content: "・";
+                                }
+                            }
+                        }
+                    }
+
+                    &__introduction {
+                        color: #4D4D4D;
+                    }
+                }
+            }
+
+            &__books {
+
+                .list {
+
+                    &__item {
+                        @include pd(20px, vw(30));
+                        background-color: rgba(#71A8D6, 0.2);
+                        @include flexBase( $wrap: "wrap", $direction: "row", $justify: "flex-start", $align: "stretch" );
+
+                        @include max(s) {
+                            + .list__item {
+                                margin-top: vw(30);
+                            }
+                        }
+
+                        .text {
+                            flex: 1;
+                            @include fontSize(15px, vw(19));
+
+                            span {
+                                display: block;
+                                @include fontSize(20px, vw(26));
+                                line-height: 1.4;
+                                @include mb(3px,vw(10));
+
+                                @include max(s) {
+                                    line-height: 1.6;
+                                }
+                            }
+                        }
+                        .image {
+                            flex: 0 0 180px;
+
+                            @include max(s) {
+                                flex: 0 0 38vw;
+                            }
+
+                            position: relative;
+                            @include height(110px, 23vw);
+
+                            img {
+                                position: absolute;
+                                max-width: 100%;
+                                max-height: 100%;
+                                top: 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}//.fw

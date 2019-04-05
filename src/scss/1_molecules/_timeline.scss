@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.fw {
+
+    .m-timeline {
+
+        li {
+            position: relative;
+            padding-left: 9em;
+
+            .date {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+    }
+
+
+}//.fw

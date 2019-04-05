@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+.fw {
+
+    // ----------------------------------------------------------
+    // Other
+    // ----------------------------------------------------------
+
+    .a-text {
+        @include fontSize(16px, vw(25));
+
+        &--xs {
+            @include fontSize(12px, vw(12));
+        }
+
+        &--s {
+            @include fontSize(14px, vw(14));
+        }
+
+        &--m {
+            // regular size(16px)
+        }
+
+        &--l {
+            @include fontSize(18px, vw(24));
+        }
+
+        &--xl {
+            @include fontSize(20px, vw(40));
+        }
+
+
+        &--with-number {
+            text-indent: -2em;
+            padding-left: 2em;
+        }
+    }
+
+    .a-color {
+
+        &--main {
+            color: $color_main;
+        }
+
+        &--sub {
+            color: $color_sub;
+        }
+
+        &--white {
+            color: #fff;
+        }
+    }
+
+    .a-align {
+
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
+        }
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    .a-font {
+
+        &--bold {
+            font-weight: bold;
+        }
+
+        &--number {
+            font-family: $font-number;
+        }
+    }
+
+    .a-marker {
+        display: inline-block;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            @include width(110%);
+            @include height(20px, vw(20));
+            background-color: $color_sub;
+            position: absolute;
+            top: 1em;
+            left: 50%;
+            z-index: -1;
+            transform: skewX(-30deg) translateX(-50%);
+        }
+    }
+
+    .a-underline {
+        display: inline-block;
+        position: relative;
+        @include mb(30px, vw(40));
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: $color_main;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .a-order-list {
+        line-height: 1.6;
+    }
+
+    .a-sup,
+    .a-sub {
+        @include fontSize(8px, vw(8));
+    }
+    .a-br {
+        &--pc {
+            @include max(s) {
+                display: none;
+            }
+        }
+
+        &--sp {
+            display: none;
+
+            @include max(s) {
+                display: inline;
+            }
+        }
+    }
+
+
+}//.fw

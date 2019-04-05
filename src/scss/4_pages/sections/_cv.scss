@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+.fw {
+
+    .p-cv {
+        position: relative;
+        background-color: #F4F4F4;
+        text-align: center;
+        @include pd(100px 0, vw(80) 0);
+
+        .balloon {
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            &__item {
+                position: relative;
+
+                background-color: $color_main;
+                color: #fff;
+                @include fontSize(30px, vw(30));
+                @include width(335px, vw(335));
+                @include height(66px, vw(66));
+                @include flexBase( $wrap: "nowrap", $direction: "column", $justify: "center", $align: "center" );
+                @include triangle($color:$color_main, $width:30px, $height:15px, $direction:bottom);
+
+                @include max(s) {
+                    @include triangle($color:$color_main, $width:vw(32), $height:vw(16), $direction:bottom);
+                }
+            }
+
+        }
+
+        .cv-title {
+            @include mb(70px, vw(40));
+        }
+        
+        .present {
+            position: relative;
+
+            background-color: #fff;
+            color: $color_main;
+            border: 1px solid $color_main;
+            box-shadow: 10px 10px 0 rgba(112,112,112,.2);
+
+            @include max(s) {
+                box-shadow: vw(10) vw(10) 0 rgba(112,112,112,.2);
+            }
+
+            &__titleBox {
+                background-color: $color_main;
+                @include pd(20px 0, vw(40) 0);
+                text-align: center;
+                color: #fff;
+                font-weight: bold;
+                line-height: 1.4;
+            }
+
+            &__lead {
+                @include fontSize(34px, vw(34));
+                @include mb(0, vw(10));
+            }
+            &__title {
+                @include fontSize(40px, vw(40));
+
+                span {
+                    @include fontSize(28px, vw(28));
+                }
+            }
+
+            &__text {
+                @include pd(20px 30px, vw(30));
+                @include fontSize(32px, vw(25));
+                line-height: 1.4;
+                text-align: left;
+
+                @include max(s) {
+                    text-align: left;
+                }
+            }
+
+
+            &__message {
+                background-color: rgba(#71A8D6, 0.2);
+                @include fontSize(24px, vw(25));
+                @include pd(30px, vw(30));
+                line-height: 1.4;
+                text-align: left;
+
+                @include max(s) {
+                    line-height: 1.6;
+                }
+            }
+
+            &__image {
+                position: absolute;
+                @include bottom(15px, vw(20));
+                @include right(20px, vw(20));
+
+                @include max(s) {
+                    width: vw(287);
+                    height: vw(217);
+                }
+            }
+        }
+
+        .plan {
+
+            + .plan, +.present {
+                @include mt(40px, vw(40));
+            }
+            
+            background-color: #fff;
+            color: $color_main;
+            border: 1px solid $color_main;
+            box-shadow: 10px 10px 0 rgba(112,112,112,.2);
+            @include pd(30px, vw(30));
+
+            @include max(s) {
+                box-shadow: vw(10) vw(10) 0 rgba(112,112,112,.2);
+            }
+
+            &__box {
+                @include flexBase( $wrap: "nowrap", $direction: "row", $justify: "flex-start", $align: "flex-end");
+
+                @include max(s) {
+                    display: block;
+                }
+            }
+
+            &__image {
+                flex: 0 0 240px;
+
+                @include max(s) {
+                    flex: 0 0 vw(240);
+                    float: left;
+                    width: vw(240);
+                    margin-right: vw(20);
+                    margin-bottom: vw(30);
+                }
+            }
+
+            &__content {
+                flex: 1;
+                @include pl(40px, 0);
+            }
+
+            &__lead {
+                @include fontSize(26px, vw(26));
+                text-align: left;
+
+                @include max(s) {
+                    line-height: 1.4;
+                    margin-bottom: vw(10);
+                }
+            }
+
+            &__title {
+                @include fontSize(34px, vw(36));
+                font-weight: bold;
+                @include mb(30px, vw(30));
+                text-align: left;
+
+                @include max(s) {
+                    line-height: 1.4;
+                }
+            }
+
+            &__special {
+                background-color: rgba(113,168,214,.2);
+                @include pd(15px, vw(15));
+                color: $color_main;
+                @include fontSize(18px, vw(24));
+                font-weight: bold;
+                line-height: 1.2;
+                
+                @include max(s) {
+                    clear: both;
+                }
+            }
+
+            &__link {
+                @include mt(30px, vw(30));
+                @include flexBase( $wrap: "nowrap", $direction: "row", $justify: "flex-end", $align: "stretch" );
+
+                @include max(s) {
+                    display: block;
+                }
+            }
+
+            &__button {
+                background-color: $color_link;
+                color: #fff;
+                display: block;
+                @include fontSize(22px, vw(32));
+                @include width(390px, auto);
+                @include height(61px, vw(91));
+                @include flexBase( $wrap: "nowrap", $direction: "column", $justify: "center", $align: "center" );
+                border-radius: 8px;
+                background-image: url('./../images/cv/button_arrow.svg');
+                background-repeat: no-repeat;
+                background-size: auto;
+                background-position: right 20px center;
+
+                @include max(s) {
+                    border-radius: vw(8);
+                    background-size: vw(62) vw(23);
+                    background-position: right vw(20) center;
+                }
+            }
+        }
+    }
+
+}//.fw

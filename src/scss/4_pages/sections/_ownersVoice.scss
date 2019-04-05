@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+.fw {
+
+    .p-ownersVoice {
+        @include pd(90px 0 150px, vw(65) 0 vw(80));
+    }
+
+}//.fw

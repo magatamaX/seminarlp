@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+.fw {
+
+    .p-instance {
+        text-align: center;
+        @include pd(70px 0 100px, vw(80) 0 vw(100));
+        position: relative;
+
+        @include triangle($color:#fff, $width:80px, $height:40px, $direction:bottom);
+
+        @include max(s) {
+            @include triangle($color:#fff, $width:vw(80), $height:vw(40), $direction:bottom);
+        }
+
+        &::after {
+            content: '';
+            background-image: url('./../images/instance/arrow.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+
+            display: block;
+            @include width(19px, vw(19));
+            @include height(84px, vw(84));
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 10;
+        }
+
+        .instanceBox {
+            @include mt(100px, vw(100));
+            border: 2px solid $color_main;
+            border-radius: 16px;
+            position: relative;
+            @include pd(50px, vw(50));
+
+            @include max(s) {
+                border-radius: vw(16);
+            }
+
+            &__title {
+                @include width(300px, vw(348));
+                @include height(60px, vw(68));
+                @include fontSize(28px, vw(34));
+                background-color: #fff;
+                color: $color_main;
+                @include flexBase( $wrap: "nowrap", $direction: "row", $justify: "center", $align: "center" );
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translate(-50%,-50%);
+            }
+
+            &__subtitle {
+                @include mb(30px);
+                @include fontSize(28px, vw(40));
+            }
+
+            &__image {
+                @include mt(40px);
+
+                .pc {
+                    display: block;
+
+                    @include max(s) {
+                        display: none;
+                    }
+                }
+
+                .sp {
+                    display: none;
+
+                    @include max(s) {
+                        display: block;
+                    }
+                }
+            }
+
+            &__text {
+                @include fontSize(16px, vw(26));
+                @include max(s) {
+                    text-align: left;
+                }
+            }
+        }
+
+    }
+
+}//.fw

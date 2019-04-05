@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+.fw {
+
+    .p-about {
+
+        background-color: #313131;
+        color: #fff;
+        @include pd(100px 0 150px, vw(100) 0 vw(150));
+
+        .pointBox {
+            @include mt(100px, vw(85));
+        }
+
+        .point {
+            @include flexBase( $wrap: "nowrap", $direction: "row", $justify: "flex-start", $align: "stretch" );
+
+            @include max(s) {
+                display: block;
+            }
+
+            + .point {
+                @include mt(60px, vw(70));
+            }
+
+            &__head {
+                flex: 0 0 180px;
+                @include flexBase( $wrap: "nowrap", $direction: "column", $justify: "center", $align: "center" );
+                color: $color_sub;
+                border: 1px solid $color_sub;
+                @include fontSize(20px, vw(20));
+                font-weight: bold;
+                font-family: $font_number;
+                @include height(auto, vw(50));
+            }
+
+            &__data {
+                flex: 1;
+                @include pd(20px 0 0 40px, vw(30) 0 0 0);
+            }
+
+            &__title {
+                @include fontSize(22px, vw(35));
+                @include mb(20px, vw(25));
+            }
+        }
+
+        .feature {
+            @include mt(30px, vw(40));
+
+            &__item {
+                background-color: #707070;
+                @include pd(30px 20px, vw(50) vw(50));
+                position: relative;
+
+                @include max(s) {
+                    + .feature__item {
+                        margin-top: vw(60);
+                    }
+                }
+            }
+
+            &__title {
+                @include mb(20px);
+                text-align: center;
+                @include fontSize(20px, vw(35));
+            }
+
+            &__text {
+                @include fontSize(14px, vw(24));
+            }
+
+            &__outside-note {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                @include fontSize(8px, vw(20));
+                @include pt(10px, vw(10));
+            }
+        }
+
+    }
+
+}//.fw

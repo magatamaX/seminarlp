@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+.fw {
+
+    // ----------------------------------------------------------
+    // Title
+    // ----------------------------------------------------------
+
+    .a-title {
+        @include fontSize(34px, vw(34));
+
+        &--xxs {
+            @include fontSize(26px, vw(26));
+        }
+
+        &--xs {
+            @include fontSize(28px, vw(28));
+        }
+
+        &--s {
+            @include fontSize(30px, vw(30));
+        }
+
+        &--m {
+            // regular size(34px)
+        }
+
+        &--l {
+            @include fontSize(40px, vw(40));
+
+            &--sp {
+                @include fontSize(40px, vw(40));
+            }
+        }
+
+        &--xl {
+            @include fontSize(50px, vw(50));
+        }
+
+        &--xxl {
+            &--sp {
+                @include fontSize(66px, vw(66));
+            }
+        }
+    }
+
+
+}//.fw

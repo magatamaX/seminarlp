@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.fw {
+
+    .p-lifeEvent {
+
+        background-color: #F4F4F4;
+        @include pd(110px 0 60px, vw(100) 0 vw(60));
+        text-align: center;
+
+        .events {
+            @include mg(40px 0 60px, vw(40) 0 vw(60));
+        }
+
+    }
+
+}//.fw
